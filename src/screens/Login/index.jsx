@@ -1,10 +1,11 @@
-import { StatusBar } from 'expo-status-bar';
+import { useNavigation } from '@react-navigation/native';
 import { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, ImageBackground, Alert, TouchableOpacity, KeyboardAvoidingView } from 'react-native';
 
 export default function Login() {
-  const [step, setStep] = useState(0);
 
+  const navigation = useNavigation();
+  const [step, setStep] = useState(0);
   const [usuario, setUsuario] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
@@ -13,7 +14,7 @@ export default function Login() {
 
   function handleSubmit() {
     console.log({ usuario, password });
-    //alert('Usuário:' + usuario + 'Senha:' + password);
+    navigation.navigate('Home');
   }
   function changeForm() {
     if (step === 0) {
@@ -56,7 +57,7 @@ return (
         'https://i.pinimg.com/564x/ab/6a/12/ab6a126748031b76fbfadae55da925f1.jpg'
 
     }}
-    resizeMode="strech"
+    resizeMode="stretch"
   >
     <Text style={styles.title}>UAIPELOTA</Text>
 
@@ -68,7 +69,7 @@ return (
         <TextInput
           style={styles.input}
           placeholder=" Digite seu usuário"
-          keyboardAppearance='e-mail-address'
+          keyboardType='email-address'
           value={usuario}
           onChangeText={setUsuario}
 
@@ -101,7 +102,7 @@ return (
         <TextInput
           style={styles.input}
           placeholder=" Seu nome completo"
-          keyboardAppearance='e-mail-address'
+          keyboardAppearance='default'
           value={name}
           onChangeText={setName}
 
@@ -111,7 +112,7 @@ return (
         <TextInput
           style={styles.input}
           placeholder=" Digite seu usuário"
-          keyboardAppearance='e-mail-address'
+          keyboardType='email-address'
           value={usuario}
           onChangeText={setUsuario}
 
