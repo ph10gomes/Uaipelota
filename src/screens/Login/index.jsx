@@ -94,6 +94,10 @@ return (
           <Text style={[styles.label, { textAlign: 'center' }]}>Cadastre-se grátis!</Text>
         </TouchableOpacity>
 
+        <TouchableOpacity onPress={() => navigation.navigate('Forgot')}>
+          <Text style={[styles.label, { textAlign: 'center', marginTop: 0 }]}>Esqueci a senha</Text>
+        </TouchableOpacity>
+
       </KeyboardAvoidingView>
     ) : (
       <View style={[styles.form, {marginTop:170}]}>
