@@ -1,6 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
 import { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, ImageBackground, Alert, TouchableOpacity, KeyboardAvoidingView } from 'react-native';
+import Button from '../../components/Button';
 
 export default function Login() {
 
@@ -85,10 +86,12 @@ return (
 
 
         />
-        <TouchableOpacity style={styles.button} onPress={handleSubmit}>
-          <Text style={styles.buttonText}>Entrar
-          </Text>
-        </TouchableOpacity>
+       <Button  label= "ENTRAR" onPress={handleSubmit}/>
+
+       <Button  label= "ENTRAR COM O LINKEDIN" 
+       onPress={handleSubmit}
+       style={{backgroundColor: "#007785"}}
+       />
 
         <TouchableOpacity onPress={changeForm}>
           <Text style={[styles.label, { textAlign: 'center' }]}>Cadastre-se grátis!</Text>
@@ -143,10 +146,8 @@ return (
 
 
         />
-        <TouchableOpacity style={styles.button} onPress={validateForm}>
-          <Text style={styles.buttonText}>Cadastrar
-          </Text>
-        </TouchableOpacity>
+        <Button onPress={validateForm} label= "CADASTRAR" />
+       
 
         <TouchableOpacity onPress={changeForm}>
           <Text style={[styles.label, { textAlign: 'center' }]}>Ja possuo conta!</Text>
@@ -199,20 +200,4 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     fontWeight: 'bold',
   },
-  button: {
-    backgroundColor: '#028039',
-    height: 40,
-    borderRadius: 20,
-    marginTop: 30,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  buttonText: {
-    color: '#fff',
-    fontSize: 18,
-    textTransform: 'uppercase',
-    fontWeight: 'bold'
-
-  }
-
 });

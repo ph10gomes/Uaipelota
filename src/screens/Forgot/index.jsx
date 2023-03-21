@@ -5,6 +5,7 @@ export default function Forgot() {
     const navigation = useNavigation();
 
     return (
+
         <View style={styles.container}>
             <Text style={styles.title}>Esqueci a senha</Text>
             <TouchableOpacity onPress={() => navigation.goBack()}>
