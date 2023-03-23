@@ -1,17 +1,16 @@
 import { useNavigation } from '@react-navigation/native';
 import { useState } from 'react';
-import { StyleSheet, Text, View, TextInput, ImageBackground, Alert, TouchableOpacity, KeyboardAvoidingView } from 'react-native';
+import { StyleSheet, Text, View, TextInput, ImageBackground, Alert, TouchableOpacity, KeyboardAvoidingView, ScrollView, Image } from 'react-native';
 import Button from '../../components/Button';
+import Logo from '../../assets/uaipelota.png';
 
 export default function Login() {
-
   const navigation = useNavigation();
   const [step, setStep] = useState(0);
   const [usuario, setUsuario] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
   const [repeatpassword, setRepeatPassword] = useState('');
-
 
   function handleSubmit() {
     console.log({ usuario, password });
@@ -50,125 +49,110 @@ export default function Login() {
 
   }
 
-return (
-  <ImageBackground
-    style={styles.container}
-    source={{
-      uri:
-        'https://i.pinimg.com/564x/ab/6a/12/ab6a126748031b76fbfadae55da925f1.jpg'
+  return (
+    <ImageBackground
+      style={styles.container}
+      source={{ uri: 'https://i.pinimg.com/564x/ab/6a/12/ab6a126748031b76fbfadae55da925f1.jpg' }}
+      resizeMode="cover"
+    >
+      {/* <Text style={styles.title}>UAIPELOTA</Text> */}
+      <Image source={Logo} style={{ height: 40, marginTop: 55 }} />
 
-    }}
-    resizeMode="stretch"
-  >
-    <Text style={styles.title}>UAIPELOTA</Text>
+      {step == 0 ? (
+        <ScrollView style={{ flex: 1, width: '100%' }}>
+          <KeyboardAvoidingView style={styles.form} behavior="padding">
+            <Text style={styles.label}>Usuário</Text>
+            <TextInput
+              style={styles.input}
+              placeholder=" Digite seu usuário"
+              keyboardType='email-address'
+              value={usuario}
+              onChangeText={setUsuario}
 
-    {step == 0 ? (
-      <KeyboardAvoidingView style={styles.form} behavior="padding">
+            />
 
-        <Text style={styles.label}>Usuário</Text>
+            <Text style={[styles.label, { marginTop: 40 }]}>Senha</Text>
+            <TextInput
+              style={styles.input}
+              placeholder=" Sua senha secreta"
+              secureTextEntry={true}
+              value={password}
+              onChangeText={setPassword}
+            />
 
-        <TextInput
-          style={styles.input}
-          placeholder=" Digite seu usuário"
-          keyboardType='email-address'
-          value={usuario}
-          onChangeText={setUsuario}
+            <Button label="ENTRAR" onPress={handleSubmit} style={{ width: '80%', alignSelf: 'center' }} />
 
-        />
-        <Text style={styles.label}>Senha</Text>
+            <TouchableOpacity onPress={() => navigation.navigate('Forgot')}>
+              <Text style={[styles.textButtons, { marginTop: 30 }]}>Esqueceu sua senha?</Text>
+            </TouchableOpacity>
 
-        <TextInput
-          style={styles.input}
-          placeholder=" Sua senha secreta"
-          secureTextEntry={true}
-          value={password}
-          onChangeText={setPassword}
+            <TouchableOpacity onPress={changeForm}>
+              <Text style={[styles.textButtons, { marginTop: 0 }]}>Ainda não possui conta?</Text>
+            </TouchableOpacity>
 
+          </KeyboardAvoidingView>
+        </ScrollView>
+      ) : (
+        <ScrollView style={{ flex: 1, width: '100%', marginTop: -20 }}>
+          <View style={[styles.form, { marginTop: 170 }]}>
+            <Text style={styles.label}>Nome</Text>
 
-        />
-       <Button  label= "ENTRAR" onPress={handleSubmit}/>
+            <TextInput
+              style={styles.input}
+              placeholder=" Seu nome completo"
+              keyboardAppearance='default'
+              value={name}
+              onChangeText={setName}
 
-       <Button  label= "ENTRAR COM O LINKEDIN" 
-       onPress={handleSubmit}
-       style={{backgroundColor: "#007785"}}
-       />
+            />
+            <Text style={styles.label}>Usuário</Text>
 
-        <TouchableOpacity onPress={changeForm}>
-          <Text style={[styles.label, { textAlign: 'center' }]}>Cadastre-se grátis!</Text>
-        </TouchableOpacity>
+            <TextInput
+              style={styles.input}
+              placeholder=" Digite seu usuário"
+              keyboardType='email-address'
+              value={usuario}
+              onChangeText={setUsuario}
 
-        <TouchableOpacity onPress={() => navigation.navigate('Forgot')}>
-          <Text style={[styles.label, { textAlign: 'center', marginTop: 0 }]}>Esqueci a senha</Text>
-        </TouchableOpacity>
+            />
+            <Text style={styles.label}>Senha</Text>
 
-      </KeyboardAvoidingView>
-    ) : (
-      <View style={[styles.form, {marginTop:170}]}>
-        <Text style={styles.label}>Nome</Text>
-
-        <TextInput
-          style={styles.input}
-          placeholder=" Seu nome completo"
-          keyboardAppearance='default'
-          value={name}
-          onChangeText={setName}
-
-        />
-        <Text style={styles.label}>Usuário</Text>
-
-        <TextInput
-          style={styles.input}
-          placeholder=" Digite seu usuário"
-          keyboardType='email-address'
-          value={usuario}
-          onChangeText={setUsuario}
-
-        />
-        <Text style={styles.label}>Senha</Text>
-
-        <TextInput
-          style={styles.input}
-          placeholder=" Sua senha secreta"
-          secureTextEntry={true}
-          value={password}
-          onChangeText={setPassword}
+            <TextInput
+              style={styles.input}
+              placeholder=" Sua senha secreta"
+              secureTextEntry={true}
+              value={password}
+              onChangeText={setPassword}
 
 
-        />
-        <Text style={styles.label}>Repita sua senha</Text>
+            />
+            <Text style={styles.label}>Repita sua senha</Text>
 
-        <TextInput
-          style={styles.input}
-          placeholder=" Sua senha secreta"
-          secureTextEntry={true}
-          value={repeatpassword}
-          onChangeText={setRepeatPassword}
+            <TextInput
+              style={styles.input}
+              placeholder=" Sua senha secreta"
+              secureTextEntry={true}
+              value={repeatpassword}
+              onChangeText={setRepeatPassword}
+            />
 
+            <Button onPress={validateForm} label="CADASTRAR" style={{ width: '80%', alignSelf: 'center' }} />
 
-        />
-        <Button onPress={validateForm} label= "CADASTRAR" />
-       
+            <Button onPress={changeForm} label="VOLTAR" style={{ width: '80%', marginTop: 20, alignSelf: 'center', backgroundColor: '#800202' }} />
+          </View>
+        </ScrollView>
+      )}
 
-        <TouchableOpacity onPress={changeForm}>
-          <Text style={[styles.label, { textAlign: 'center' }]}>Ja possuo conta!</Text>
-        </TouchableOpacity>
-
-      </View>
-    )}
-
-  </ImageBackground>
+    </ImageBackground>
 
 
-);
+  );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-
-    backgroundColor: '#000',
     alignItems: 'center',
-    //justifyContent: 'center',
   },
   title: {
     fontSize: 36,
@@ -176,28 +160,36 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 30,
     marginTop: 50,
-
   },
   form: {
     marginTop: 270,
     width: '90%',
     alignSelf: 'center',
-
-
   },
   label: {
-
     color: '#fff',
     fontSize: 16,
     marginBottom: 12,
     marginTop: 20,
-    marginLeft: 10,
+    marginLeft: 45,
+    fontWeight: 'bold',
+    textTransform: 'uppercase',
+  },
+  textButtons: {
+    color: '#fff',
+    fontSize: 11,
+    fontWeight: 'bold',
+    textTransform: 'uppercase',
+    marginVertical: 12,
+    textAlign: 'center',
   },
   input: {
     backgroundColor: '#fff',
-    width: '100%',
+    width: '80%',
     height: 40,
     borderRadius: 20,
     fontWeight: 'bold',
+    padding: 12,
+    alignSelf: 'center',
   },
 });
