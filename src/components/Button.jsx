@@ -24,6 +24,7 @@ const styles = StyleSheet.create({
         marginTop: 30,
         alignItems: 'center',
         justifyContent: 'center',
+        elevation:5,
       },
       buttonText: {
         color: '#fff',

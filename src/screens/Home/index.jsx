@@ -79,6 +79,7 @@ const styles = StyleSheet.create({
         height: 70,
         borderRadius: 10,
         marginVertical: 20,
+        elevation:5,
     },
     leftAside: {
         width: '80%',
