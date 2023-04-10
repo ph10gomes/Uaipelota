@@ -4,7 +4,7 @@ import { View, Text, StyleSheet, TouchableOpacity,ImageBackground, Image, TextIn
 import Button from '../../components/Button';
 import Logo from '../../assets/uaipelota.png';
 
-export default function Forgot() {
+export default function Sorteio() {
     const navigation = useNavigation();
      const [email, setEmail] = useState('');
      function changeForm() {
@@ -20,7 +20,6 @@ export default function Forgot() {
           Alert.alert('Digite seu email');
           return;
         }else{
-          setEmail('');
           Alert.alert('Seu email foi enviado com sucesso!');
           return;
         }
@@ -35,27 +34,8 @@ export default function Forgot() {
 >
       {/* <Text style={styles.title}>UAIPELOTA</Text> */}
       <Image source={Logo} style={{ height: 40, marginTop: 55 }} />
-      <Text style={styles.title}>ESQUECI MINHA SENHA</Text>
-      <Text style={styles.subtitle}>PARA REDEFINIR SUA SENHA, INFORME O E-MAIL 
-CADASTRADO NA SUA CONTA E LHE ENVIAREMOS 
-UM LINK COM AS INSTRUÇÕES.</Text>
 
-<ScrollView style={{ width: '100%', marginTop: -20 }}>
-          <View style={[styles.form]}>
-            
- <Text style={styles.label}> E-mail</Text>
-            <TextInput
-              style={styles.input}
-              placeholder=" Digite seu E-MAIL"
-              keyboardType='email-address'
-              value={email}
-              onChangeText={setEmail}
-              ></TextInput>
-              <Button onPress={validateForm} label="ENVIAR E-MAIL" style={{ width: '80%', alignSelf: 'center' }} />
-              <Button onPress={() => navigation.goBack()} label="VOLTAR" style={{ width: '75%', marginTop: 20, alignSelf: 'center', backgroundColor: '#800202' }} />
-              
-              </View>
-              </ScrollView>
+      <Button onPress={() => navigation.goBack()} label="VOLTAR" style={{ width: '75%', position: 'absolute', bottom: 50, alignSelf: 'center', backgroundColor: '#800202' }} />
 
     </ImageBackground>
     )
