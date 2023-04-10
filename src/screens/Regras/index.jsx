@@ -16,10 +16,12 @@ return (
             resizeMode="cover" >
                 <Image source={Logo} style={{ height: 40, position: 'absolute', top: 55 }} />
                 <View style={styles.container}>
-        <Text style={styles.title}>Regras</Text>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
-                <Text>Voltar</Text>
-        </TouchableOpacity>
+        
+        
+        
+        
+        
+        <Button onPress={() => navigation.goBack()} label="VOLTAR" style={styles.button} />
     </View>
     </ImageBackground>
 
@@ -36,10 +38,31 @@ const styles = StyleSheet.create(
         justifyContent: 'center',
     },
     title: {
-        marginTop: 250,
-        color: 'orange',
-        fontSize: 48,
+        color: '#FFF',
+        fontSize: 18,
+        marginVertical: 20,
         fontWeight: 'bold',
+        textAlign: 'center',
+        textTransform: 'uppercase',
+        marginBottom: 0,
+        
     },
-}
+    subtitle:{
+        color: 'gray',
+        fontSize: 18,
+        marginVertical: 20,
+        fontWeight: 'bold',
+        textAlign: 'center',
+        marginTop:3,
+        marginBottom:1,
+        
+    },
+    button: {
+        width: '75%',
+        position: 'absolute',
+        bottom: 30,
+        alignSelf: 'center',
+        backgroundColor: '#800202',
+    }}
+
 )
