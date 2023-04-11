@@ -5,7 +5,7 @@ import Login from "../screens/Login";
 import Home from "../screens/Home";
 import Forgot from "../screens/Forgot";
 import Players from "../screens/Players";
-import Regras from "../screens/Regras";
+import Rules from "../screens/Rules";
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
@@ -16,7 +16,7 @@ export function AppRoutes() {
       <Screen name="Home" component={Home} />
       <Screen name="Forgot" component={Forgot} />
       <Screen name="Players" component={Players} />
-      <Screen name="Regras" component={Regras}/>
+      <Screen name="Rules" component={Rules} />
     </Navigator>
   )
 }
