@@ -43,7 +43,7 @@ export default function Home() {
                     </View>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.card} onPress ={()=> navigation.navigate('Regras')}>
+                <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('Rules')}>
                     <View style={{ flexDirection: 'row', justifyContent: 'space-between', width: '100%', padding: 10 }}>
                         <View style={styles.leftAside}>
                             <Text style={styles.cardTitle}>Regras</Text>
