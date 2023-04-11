@@ -6,6 +6,7 @@ import Home from "../screens/Home";
 import Forgot from "../screens/Forgot";
 import Players from "../screens/Players";
 import Sorteio from "../screens/Sorteio";
+import Regras from "../screens/Regras";
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
@@ -17,6 +18,7 @@ export function AppRoutes() {
       <Screen name="Forgot" component={Forgot} />
       <Screen name="Players" component={Players} />
       <Screen name="Sorteio" component={Sorteio} />
+      <Screen name="Regras" component={Regras} />
     </Navigator>
   )
 }
