@@ -1,8 +1,9 @@
-UAIPelota Mobile App
+--UAIPELOTA MOBILE APP--
+
 O UAIPelota é um aplicativo mobile desenvolvido em React Native para auxiliar na organização de peladas de futebol. 
 Com o UAIPelota,é possível montar e sortear times de forma rápida e fácil, levando em consideração o rank dos jogadores, que varia de 1 a 5 estrelas.
 
-Funcionalidades
+--FUNCIONALIDADES--
 
 Lista: Permite definir a lista de jogadores que participarão da próxima pelada;
 
@@ -12,7 +13,7 @@ Sortear times: Define os jogadores da lista e sorteia rapidamente os times nivel
 
 Regras: Define o tamanho da lista e outras regras para a organização da pelada.
 
-Como utilizar o UAIPelota
+--COMO UTILIZAR O APP UAIPELOTA--
 
 1-Clone o repositório em sua máquina local;
 
@@ -26,7 +27,7 @@ Como utilizar o UAIPelota
 
 6-Utilize as funcionalidades do UAIPelota para organizar suas peladas de futebol.
 
-Criadores
+--DESENVOLVEDORES--
 
 Bruno Figueiredo: https://github.com/BJF009
 
