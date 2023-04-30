@@ -17,7 +17,7 @@ Como utilizar o UAIPelota
 6-Utilize as funcionalidades do UAIPelota para organizar suas peladas de futebol.
 
 Criadores
-Bruno Figueiredo: https://github.com/brunofs88
+Bruno Figueiredo: https://github.com/BJF009
 Eduardo Trindade: https://github.com/edutrindade
 Pedro Bittencourt: https://github.com/ph10gomes
 Vinicius Silva: https://github.com/Ceguinz
