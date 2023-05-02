@@ -17,9 +17,9 @@ export default function Players() {
     const players = [
         {
             id: '1',
-            name: 'Luva de Pedreiro',
+            name: 'Eduardo',
             position: 'Goleiro',
-            rating: 4.5,
+            rating: 5,
         },
         {
             id: '2',

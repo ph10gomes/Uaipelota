@@ -18,6 +18,7 @@ const ModalPlayer = ({ modalVisible, setModalVisible }) => {
                     <View style={styles.modalView}>
 
                         <Text style={styles.modalText}>Novo jogador</Text>
+                        <Text style={styles.modalText}>Eduardo você é fera, voce mora aqui❤</Text>
 
                         <Button onPress={() => setModalVisible(!modalVisible)} label="CANCELAR" style={styles.button} />
 
