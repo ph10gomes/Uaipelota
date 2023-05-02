@@ -5,6 +5,7 @@ import { View, Text, Image, StyleSheet, ImageBackground, TouchableOpacity, FlatL
 import Button from "../../components/Button";
 import ModalPlayer from "../../components/ModalPlayer";
 
+
 import Logo from "../../assets/uaipelota.png";
 import Jogador from '../../assets/jogador_a.png'
 
@@ -116,7 +117,7 @@ export default function SoccerList() {
 
  const renderItem = ({ item }) => (
    <View style={styles.item}>
-     <Text>{item.name}</Text>
+     <Text>{item.name}</Text>{/*
      <CheckBox
        value={selectedItems.includes(item)}
        onValueChange={(newValue) => {
@@ -126,10 +127,10 @@ export default function SoccerList() {
            setSelectedItems(selectedItems.filter((selectedItem) => selectedItem !== item));
          }
        }}
-     />
+    />*/}
    </View>
  );
-
+    
 
 return (
    <>
@@ -139,21 +140,21 @@ return (
        resizeMode="cover"
    >
        <Image source={Logo} style={{ height: 40, position: 'absolute', top: 55 }} />
-
+{/*
        <CheckBox
     onValueChange={() => checkBoxChanged()} 
-/>
-<CheckBox
+/>*/}
+{/*<CheckBox
    value={isSelected}
    onValueChange={setSelection}
    title="Checkbox"
    checkedTitle="Checkbox Selecionado"
    color="#FF0000"
    tintColor="#00FF00"
-/>
-checkBoxChanged(){ 
+/>*/}
+{/*checkBoxChanged(){ *}
 this.setState({isSelected : !this.state.isSelected})
-}
+*/}
            <View style={styles.area}>
                <Text style={styles.title}>Selecione os jogadores ({players.length})</Text>
                

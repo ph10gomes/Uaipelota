@@ -33,25 +33,6 @@ const ModalPlayer = ({ modalVisible, setModalVisible }) => {
     }
 
     return (
-<<<<<<< HEAD
-        
-            <Modal
-                animationType="slide"
-                transparent={true}
-                visible={modalVisible}
-                onRequestClose={() => {
-                    Alert.alert('Modal has been closed.');
-                    setModalVisible(!modalVisible);
-                }}>
-                <View style={styles.centeredView}>
-                    <View style={styles.modalView}>
-
-                        <Text style={styles.modalText}>Novo jogador</Text>
-                        <Text style={styles.modalText}>Eduardo você é fera, voce mora aqui❤</Text>
-
-                        <Button onPress={() => setModalVisible(!modalVisible)} label="CANCELAR" style={styles.button} />
-
-=======
         <Modal
             animationType="slide"
             transparent={true}
@@ -83,7 +64,6 @@ const ModalPlayer = ({ modalVisible, setModalVisible }) => {
                         <TouchableOpacity style={[styles.card, position === "Fixo" && styles.active]} onPress={() => setPosition("Fixo")}>
                             <Text style={styles.txtCard}>Fixo </Text>
                         </TouchableOpacity>
->>>>>>> origin/bruno
                     </View>
 
 

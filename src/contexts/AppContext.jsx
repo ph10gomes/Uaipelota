@@ -1,18 +1,38 @@
-import { useState, createContext } from "react";
+import React, { createContext, useState, Alert } from 'react';
+import bdPlayer from '../screens/sqlite/players';
+import { useNavigation } from '@react-navigation/native';
 
-export const AppContext = createContext({
-   players: [],
-   setPlayers: () => {},
-   list: [],
-   setList: () => {},
-   amountOfPlayers: 15,
-   setAmountOfPlayers: () => {},
-});
+export const AuthContext = createContext({})
 
-export const AppProvider = ({ children }) => {
-   const [players, setPlayers] = useState([]);
-   const [list, setList] = useState([]);
-   const [amountOfPlayers, setAmountOfPlayers] = useState(15);
+function AuthProvider({ children }) {
+   const [player, setPlayer] = useState({
+      id: '',
+      name: '',
+      position: '',
+      rating: '',
+   });
 
-   return <AppContext.Provider value={{ players, setPlayers, list, setList, amountOfPlayers, setAmountOfPlayers }}>{children}</AppContext.Provider>;
-};
+   function createAccount(player) {
+      bdPlayer.create(player)
+         .then((id) => {
+            console.log('Usuário criado com sucesso!');
+            setPlayer({
+               id: player.id,
+               name: player.name,
+               position: player.position,
+               rating: player.rating 
+            });
+
+         })
+         .catch((error) => {
+            console.log('Erro ao criar usuário: ' + error.message);
+         });
+   }
+   return (
+      <AuthContext.Provider value={{player, createAccount}}>
+         {children}
+      </AuthContext.Provider>
+   )
+}
+
+export default AuthProvider;
