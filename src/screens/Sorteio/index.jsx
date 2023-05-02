@@ -1,18 +1,20 @@
 import { useNavigation } from "@react-navigation/native";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { View, Text, StyleSheet, TouchableOpacity, ImageBackground, Image, TextInput, Dimensions, Alert } from "react-native";
 import Button from "../../components/Button";
 import Logo from "../../assets/uaipelota.png";
 import StarRating from "react-native-star-rating";
+import { AppContext } from "../../contexts/AppContext";
 
 const { width, height } = Dimensions.get("window");
 
 export default function Sorteio() {
    const navigation = useNavigation();
+   const { amountOfPlayers } = useContext(AppContext);
    const [teams, setTeams] = useState([]);
    const [ratings, setRatings] = useState([]);
 
-   const players = [
+   let players = [
       {
          id: "1",
          name: "Luva de Pedreiro",
@@ -117,7 +119,7 @@ export default function Sorteio() {
    }
 
    function formarTimes(players) {
-      const numJogadores = players.length;
+      const numJogadores = amountOfPlayers;
       const numTimes = Math.floor(numJogadores / 5);
       const jogadoresPorTime = 5;
 
@@ -164,6 +166,7 @@ export default function Sorteio() {
    }
 
    function sortear() {
+      players = players.slice(0, amountOfPlayers);
       const teamsSorted = formarTimes(players);
       console.log("teamsSorted", teamsSorted);
       setTeams(teamsSorted);

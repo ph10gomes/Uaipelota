@@ -8,6 +8,7 @@ import Forgot from "../screens/Forgot";
 import Players from "../screens/Players";
 import Rules from "../screens/Rules";
 import Sorteio from "../screens/Sorteio";
+import SoccerList from "../screens/SoccerList";
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
@@ -18,6 +19,7 @@ export function AppRoutes() {
       <Screen name="Home" component={Home} />
       <Screen name="Forgot" component={Forgot} />
       <Screen name="Players" component={Players} />
+      <Screen name="SoccerList" component={SoccerList} />
       <Screen name="Sorteio" component={Sorteio} />
       <Screen name="Rules" component={Rules} />
     </Navigator>
